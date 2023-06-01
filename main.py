@@ -154,8 +154,9 @@ async def upload_file(file : UploadFile):
             l=np.append(l,data.values.flatten())
             L=l.reshape(1, -1)
             probability=svc.predict_proba(L)
+            real , fake =probability[0][0],probability[0][1]
             os.remove(input_folder + '/' + filename)
-            return {'file': f'{filename}', 'probability': f'{probability}'}
+            return {'file': f'{filename}', 'real': f'{real}','fake':f'{fake}'}
     
     print(os.listdir(input_folder))
 if __name__ == '__main__':

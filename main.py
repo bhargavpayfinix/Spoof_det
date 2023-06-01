@@ -12,7 +12,7 @@ import os
 
 from mangum import Mangum
 import pandas as pd
-from skimage.feature import greycomatrix, greycoprops
+from skimage.feature import graycomatrix, graycoprops
 from skimage.measure import shannon_entropy
 
 
@@ -34,41 +34,41 @@ def feature_extractor1(dataset):
     
     img = dataset
 
-    GLCM = greycomatrix(img, [1], [0])      
-    GLCM_Energy = greycoprops(GLCM, 'energy')[0]
+    GLCM = graycomatrix(img, [1], [0])      
+    GLCM_Energy = graycoprops(GLCM, 'energy')[0]
     df['Energy'] = GLCM_Energy
-    GLCM_corr = greycoprops(GLCM, 'correlation')[0]
+    GLCM_corr = graycoprops(GLCM, 'correlation')[0]
     df['Corr'] = GLCM_corr       
-    GLCM_diss = greycoprops(GLCM, 'dissimilarity')[0]
+    GLCM_diss = graycoprops(GLCM, 'dissimilarity')[0]
     df['Diss_sim'] = GLCM_diss       
-    GLCM_hom = greycoprops(GLCM, 'homogeneity')[0]
+    GLCM_hom = graycoprops(GLCM, 'homogeneity')[0]
     df['Homogen'] = GLCM_hom       
-    GLCM_contr = greycoprops(GLCM, 'contrast')[0]
+    GLCM_contr = graycoprops(GLCM, 'contrast')[0]
     df['Contrast'] = GLCM_contr
 
 
-    GLCM2 = greycomatrix(img, [3], [0])       
-    GLCM_Energy2 = greycoprops(GLCM2, 'energy')[0]
+    GLCM2 = graycomatrix(img, [3], [0])       
+    GLCM_Energy2 = graycoprops(GLCM2, 'energy')[0]
     df['Energy2'] = GLCM_Energy2
-    GLCM_corr2 = greycoprops(GLCM2, 'correlation')[0]
+    GLCM_corr2 = graycoprops(GLCM2, 'correlation')[0]
     df['Corr2'] = GLCM_corr2       
-    GLCM_diss2 = greycoprops(GLCM2, 'dissimilarity')[0]
+    GLCM_diss2 = graycoprops(GLCM2, 'dissimilarity')[0]
     df['Diss_sim2'] = GLCM_diss2       
-    GLCM_hom2 = greycoprops(GLCM2, 'homogeneity')[0]
+    GLCM_hom2 = graycoprops(GLCM2, 'homogeneity')[0]
     df['Homogen2'] = GLCM_hom2       
-    GLCM_contr2 = greycoprops(GLCM2, 'contrast')[0]
+    GLCM_contr2 = graycoprops(GLCM2, 'contrast')[0]
     df['Contrast2'] = GLCM_contr2
 
-    GLCM3 = greycomatrix(img, [5], [0])       
-    GLCM_Energy3 = greycoprops(GLCM3, 'energy')[0]
+    GLCM3 = graycomatrix(img, [5], [0])       
+    GLCM_Energy3 = graycoprops(GLCM3, 'energy')[0]
     df['Energy3'] = GLCM_Energy3
-    GLCM_corr3 = greycoprops(GLCM3, 'correlation')[0]
+    GLCM_corr3 = graycoprops(GLCM3, 'correlation')[0]
     df['Corr3'] = GLCM_corr3       
-    GLCM_diss3 = greycoprops(GLCM3, 'dissimilarity')[0]
+    GLCM_diss3 = graycoprops(GLCM3, 'dissimilarity')[0]
     df['Diss_sim3'] = GLCM_diss3       
-    GLCM_hom3 = greycoprops(GLCM3, 'homogeneity')[0]
+    GLCM_hom3 = graycoprops(GLCM3, 'homogeneity')[0]
     df['Homogen3'] = GLCM_hom3       
-    GLCM_contr3 = greycoprops(GLCM3, 'contrast')[0]
+    GLCM_contr3 = graycoprops(GLCM3, 'contrast')[0]
     df['Contrast3'] = GLCM_contr3
 
 

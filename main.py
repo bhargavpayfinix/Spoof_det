@@ -163,7 +163,7 @@ async def upload_file(file : UploadFile):
 
            
             os.remove(input_folder + '/' + filename)
-            return {'file': f'{filename}', 'real': f'{real}','fake':f'{fake}'}
+            return {'file': f'{filename}', 'real': f'{real}','fake':f'{True}'}
     
     print(os.listdir(input_folder))
 if __name__ == '__main__':

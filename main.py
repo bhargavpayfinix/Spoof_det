@@ -156,7 +156,10 @@ async def upload_file(file : UploadFile):
             probability=svc.predict_proba(L)
             real , fake =probability[0][0],probability[0][1]
             fake = fake*.48
-            fake=True if fake>0.45 else fake=False
+            if fake>0.45:
+                fake=True 
+            else:
+                fake=False
 
            
             os.remove(input_folder + '/' + filename)
